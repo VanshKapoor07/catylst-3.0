@@ -1,16 +1,9 @@
 [package]
-name = "todo-list"
+name = "investment_contract"
 version = "1.0.0"
-authors = []
 
 [addresses]
-todolist_addr='0x0da2178c68352cf9035afbb8750eb9eb6905332a9d0f15bd36b140cba6eaf5eb'
+investment_contract = "0x51e1de64d24251bbd3d9d96914e9cb8e79e08b3396c66c974d4b6087c0273916"
 
-[dev-addresses]
-
-[dependencies.AptosFramework]
-git = "https://github.com/aptos-labs/aptos-core.git"
-rev = "mainnet"
-subdir = "aptos-move/framework/aptos-framework"
-
-[dev-dependencies]
+[dependencies]
+AptosFramework = { git = "https://github.com/aptos-labs/aptos-core.git", subdir = "aptos-move/framework/aptos-framework/", rev = "main" }
