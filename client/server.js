@@ -199,7 +199,7 @@ app.prepare().then(async() => {
     console.log(amount.invest);
     let investAmount = Number(amount.invest);
 
-    connection.query('UPDATE company SET fr=(?)',[investAmount],(err, result) => {
+    connection.query('UPDATE company SET fr=fr+(?)',[investAmount],(err, result) => {
       if (err) {
           console.error(err);
           return res.status(500).send('Error inserting user');
