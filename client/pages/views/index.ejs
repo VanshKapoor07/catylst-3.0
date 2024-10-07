@@ -3,95 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>CATALYST 2.O</title>
+
     <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+        * {
+          font-family: 'Montserrat', sans-serif;
+        }
+        .cards {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-bottom: 40px;
+        }
+        .card {
+          background-color: black;
+          padding: 15px;
+          position: relative;
+          border-radius: 15px;
+        }
+        img {
+          width: 40px;
+          border-radius: 25px;
+          left: 0;
+        }
+        .button {
+          background-color: #1a1d20;
+          color: #fff;
+          border: none;
+          padding: 10px 20px;
+          font-size: 18px;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            text-align: center;
+        }
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        body {
+            background-color: rgb(193, 165, 165);
+            position: relative;
+        }
+        .features {
+            text-align: left;
+        }
+        .feature {
+            margin-bottom: 10px;
+        }
+        .dropdown {
+            display: none;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .feature:hover .dropdown {
+            display: block;
+        }
+        .nav {
+            display: flex;
+            justify-content: space-around;
+            font-size: 19px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 2vw;
+            padding-right: 2vw;
+            position: sticky;
+            top: 0;
+            background-color: rgb(223, 126, 126);
+            z-index: 1000;
+        }
+        .about_us, .explore, .user_manual, .contact_us {
+            cursor: pointer;
+            padding: 2.5vmin;
+            border-radius: 10px;
+        }
+        .about_us:hover, .explore:hover, .user_manual:hover, .contact_us:hover {
+            background-color: burlywood;
+        }
+        .logo_main {
+            margin-top: 10px;
+            display: flex;
+        }
 
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        /* Typewriter effect */
+        .typewriter h2 {
+          overflow: hidden;
+          border-right: .15em solid black;
+          white-space: nowrap;
+          letter-spacing: .076em;
+          animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        }
 
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<!--<link rel="stylesheet" href="style.css"> -->
-<style>
-    .cards{
-        display: flex;
-        justify-content: center;
-        gap:50px;
-        margin-bottom: 40px;
-    }
-    .card{
-        background-color: white;
-        border-radius: 10px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        padding: 20px;
-    }
-    .button{
-      background-color: #007bff;
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      font-size: 18px;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    .button:hover{
-        background-color: #0056b3;
-    }
-    .container{
-        max-width: 800px;
-        margin: 50px auto;
-        text-align: center;
-    }
-    h1{
-        font-size: 48px;
-        margin-bottom: 20px;
-    }
-    body{
-    background-image: linear-gradient(to right , #e078d7, #6684e8);
-}
-    .features {
-      text-align: left;
-    }
-    .feature {
-      margin-bottom: 10px;
-    }
-    .dropdown {
-      display: none;
-      margin-top: 10px;
-      font-size: 14px;
-    }
-    .feature:hover .dropdown {
-      display: block;
-}
+        @keyframes typing {
+          from { width: 0 }
+          to { width: 100% }
+        }
 
-</style>
+        @keyframes blink-caret {
+          from, to { border-color: transparent }
+          50% { border-color: black; }
+        }
+    </style>
 </head>
 <body>
+
+    <div class="nav">
+        <div class="logo_main">
+          <img src="ic_xeccat.png.jpg" alt="">
+          <h4><b>CATALYST 3.O</b></h4>
+        </div>
+        <div class="about_us">
+            About Us
+        </div>
+        <div class="explore">
+            Explore
+        </div>
+        <div class="user_manual">
+            User Manual
+        </div>
+        <div class="contact_us">
+            Contact us
+        </div>
+    </div>
+
     <div class="container">
-        <h1><b>CATALYST 2.O</b></h1> 
-        <br><br><br><br><br>
-    <div class="cards">
-        <div class="card">
-            <h2><b>COMPANY</b></h2>
-            <form method="post" action="/company">
-       
-                <button type="submit" class="button" >COMPANY</button>
-                </form>
+      <div class="typewriter">
+        <h2>Where Startups Meet Their Next Big Investor</h2>
+      </div>
+      <br><br>
+      <div class="role">
+        <h2>Select your role</h2>
+      </div>
+      <div class="cards">
+            <div class="card">
+              <img src="company.png" alt="">
+              <h2><b>COMPANY</b></h2>
+              
+              <form method="post" action="/company">
+                  <button type="submit" class="button">COMPANY</button>
+              </form>
             </div>
             <div class="card">
-                <h2><b>INVESTOR</b></h2>
-                <form method="post" action="/investor">
-        
-                    <button type="submit" class="button">INVESTOR</button>
-                    </form>
-
+              <img src="investor.jpg" alt="">
+              <h2><b>INVESTOR</b></h2>
+              <form method="post" action="/investor">
+                  <button type="submit" class="button">INVESTOR</button>
+              </form>
             </div>
-    </div>
-    <br><br><br><br>
-    <div class="features">
+      </div>
+      <br><br><br><br>
+      <div class="features">
         <h2><b>Key Features:</b></h2>
         <ul>
           <li class="feature">
@@ -106,13 +184,8 @@
             Decentralized platform for democratized access to investment opportunities.
             <div class="dropdown">Provides equal opportunities for all investors, regardless of location or status.</div>
           </li>
-          
       </ul>
+      </div>
     </div>
-</div>
-    
-    
-
-
 </body>
 </html>

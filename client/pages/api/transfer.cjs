@@ -17,7 +17,7 @@ async function transferLegacyCoin(sender, recipient, amount) {
     //     arguments: [sender, recipient, amountIntUsingNumber]
     //   };
     const MODULE_ADDRESS = "0x51e1de64d24251bbd3d9d96914e9cb8e79e08b3396c66c974d4b6087c0273916";
-    const MODULE_NAME = "investment_contract_4";
+    const MODULE_NAME = "investment_contract_10";
     const FUNCTION_NAME = "invest";
     
     const payload = {
