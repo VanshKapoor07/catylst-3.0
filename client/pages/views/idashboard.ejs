@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Custom styles */
+    body {
+      background-color: #f8f9fa; /* Set a light background color */
+    }
+    .company-card {
+      background-color: #fff; /* Set a white background color for each company card */
+      margin-bottom: 20px; /* Add some margin between company cards */
+      border-radius: 10px; /* Add border radius for rounded corners */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for a card-like appearance */
+    }
+    .invest-button {
+      margin-top: 20px; /* Add some margin above the invest button */
+}
+.investment-pitch {
+      background-color: #f8f9fa; /* Set a light background color for the pitch section */
+      border-radius: 0 0 10px 10px; /* Add border radius for bottom corners */
+      padding: 10px; /* Add some padding */
+      font-size: 16px; /* Increase font size */
+      font-style: italic; /* Apply italic style */
+}
+.hello-message {
+      font-size: 24px; /* Larger font size */
+      font-weight: bold; /* Bold text */
+      margin-bottom: 10px; /* Add margin below the hello message */
+    }
+    .investor-name {
+      font-size: 20px; /* Larger font size */
+      font-style: italic; /* Italic style */
+      margin-bottom: 20px; /* Add margin below the investor's name */
+    }
+    .money-return {
+      font-size: 18px; /* Font size */
+      font-weight: bold; /* Bold text */
+      margin-bottom: 20px; /* Add margin below the money return message */
+    }
+    body{
+    background-image: linear-gradient(to right bottom, #ff7e5f, #feb47b, #ffd087);}
+</style>
+    
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="text-center mt-4 mb-4">Investor Dashboard</h1>
+        <br><br>
+        <div class="hello-message">Hello,</div>
+        <div class="investor-name"><%= resultsforinvestortable.name %></div>
+        <div class="money-return">Money returned: <%= resultsforinvestortable.returnamount %> ETH</div>
+        
+        <br><br>
+        <div class="row">
+          <div class="col-md-8">
+            <div class="company-card p-4"> 
+                <% resultsforcompanytable.forEach(result => { %>
+                    <h4>Company Name: <%= result.name %></h4>
+                    <p><b>E-mail: </b><%= result.email %></p>
+                    <p><b>Contact Number: </b><%= result.contactno %></p>
+                    <p><b>Funding required: </b><%= result.funding %> ETH</p>
+                    <p><b>Funding received:</b> <%= result.fr %> ETH</p>
+                    <div class="investment-pitch">
+                        <h5>Investment Pitch: </h5>
+                    <p><%= result.pitch %></p>
+                    </div>
+                    <div class="invest">
+                        <form class="form-inline" method="POST" action="/invest">
+                            <div class="form-group mx-sm-3 mb-2">
+                              <label for="number" class="sr-only">Investment Amount</label>
+                              <input type="number" class="form-control" id="invest" name="invest"placeholder="Investment Amount " required>
+                            </div>
+                            <button type="submit" class="btn btn-primary mb-2">INVEST</button>
+                 </form>
+                    </div>
+            </div>
+    
+    
+    
+
+    
+    
+        
+        
+    
+    
+    <p> </p>
+    <%}); %>
+
+    <a href="/">Logout</a>
+</body>
+</html>

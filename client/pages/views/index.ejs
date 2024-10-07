@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CATALYST 2.O</title>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<!--<link rel="stylesheet" href="style.css"> -->
+<style>
+    .cards{
+        display: flex;
+        justify-content: center;
+        gap:50px;
+        margin-bottom: 40px;
+    }
+    .card{
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        padding: 20px;
+    }
+    .button{
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 18px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .button:hover{
+        background-color: #0056b3;
+    }
+    .container{
+        max-width: 800px;
+        margin: 50px auto;
+        text-align: center;
+    }
+    h1{
+        font-size: 48px;
+        margin-bottom: 20px;
+    }
+    body{
+    background-image: linear-gradient(to right , #e078d7, #6684e8);
+}
+    .features {
+      text-align: left;
+    }
+    .feature {
+      margin-bottom: 10px;
+    }
+    .dropdown {
+      display: none;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+    .feature:hover .dropdown {
+      display: block;
+}
+
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1><b>CATALYST 2.O</b></h1> 
+        <br><br><br><br><br>
+    <div class="cards">
+        <div class="card">
+            <h2><b>COMPANY</b></h2>
+            <form method="post" action="/company">
+       
+                <button type="submit" class="button" >COMPANY</button>
+                </form>
+            </div>
+            <div class="card">
+                <h2><b>INVESTOR</b></h2>
+                <form method="post" action="/investor">
+        
+                    <button type="submit" class="button">INVESTOR</button>
+                    </form>
+
+            </div>
+    </div>
+    <br><br><br><br>
+    <div class="features">
+        <h2><b>Key Features:</b></h2>
+        <ul>
+          <li class="feature">
+            Utilizes blockchain technology for transparent and secure transactions.
+            <div class="dropdown">Ensures trust and immutability of transaction records.</div>
+          </li>
+          <li class="feature">
+            Smart contract integration for automated execution of funding agreements.
+            <div class="dropdown">Automates contract execution, reducing manual intervention.</div>
+          </li>
+          <li class="feature">
+            Decentralized platform for democratized access to investment opportunities.
+            <div class="dropdown">Provides equal opportunities for all investors, regardless of location or status.</div>
+          </li>
+          
+      </ul>
+    </div>
+</div>
+    
+    
+
+
+</body>
+</html>

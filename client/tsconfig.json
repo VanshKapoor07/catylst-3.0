@@ -8,13 +8,31 @@
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
-    "module": "commonjs",
+    "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true
+    "incremental": true,
+    "baseUrl": "./client",
+    "paths": {
+      "@/*": ["src/*"]
+    }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx","src/@types/**/*.d.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "pages/_app.tsx",
+    "pages/index_old.tsx", // Changed this line
+    "src/App.tsx",
+    "src/EnterAmount.tsx",
+    "src/index.ts",
+    "src/react-feather.d.ts",
+    "vite-env.d.ts",
+    "next-env.d.ts",
+    "pages/api/transfer.cjs",
+  
+  ],
+  "exclude": ["node_modules"],
+  "scripts": {
+    "dev": "ts-node ./pages/api/transfer.ts"
+  }
 }
