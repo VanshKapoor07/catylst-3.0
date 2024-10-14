@@ -205,10 +205,11 @@ app.prepare().then(async() => {
           return res.status(500).send('Error inserting user');
       };
 
-  })
   performTransaction(investAmount);
   res.redirect('/');
   });
+
+
   // Handle other Next.js pages
   server.get('*', (req, res) => {
     return handle(req, res);
