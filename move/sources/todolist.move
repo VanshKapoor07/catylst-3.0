@@ -1,5 +1,5 @@
 address 0x51e1de64d24251bbd3d9d96914e9cb8e79e08b3396c66c974d4b6087c0273916 {
-    module investment_contract_10 {  // Updated to v2
+    module investment_contract_finallyy {  // Updated to v2
         use std::signer;
         use aptos_framework::table::{Self, Table};
         use std::vector;
@@ -39,8 +39,8 @@ address 0x51e1de64d24251bbd3d9d96914e9cb8e79e08b3396c66c974d4b6087c0273916 {
         }
 
         /// Invest in the startup    (performTransaction function in catalyst2.0, invest here)
-        public entry fun invest(startup: &signer, investor_address: address, amount: u64) acquires InvestmentData {
-            let startup_address = signer::address_of(startup);
+        public entry fun invest(startup_address: address, investor: &signer, amount: u64) acquires InvestmentData {
+            let investor_address = signer::address_of(investor);
             assert!(exists<InvestmentData>(startup_address), E_NOT_INITIALIZED);
             
             let investment_data = borrow_global_mut<InvestmentData>(startup_address);
@@ -77,6 +77,7 @@ address 0x51e1de64d24251bbd3d9d96914e9cb8e79e08b3396c66c974d4b6087c0273916 {
             // For simplicity, we're just marking the contract as inactive
             let investment_data = borrow_global_mut<InvestmentData>(startup_address);
             investment_data.is_active = false;
+            investment_data.total_investment = 0;
         }
 
         #[view]

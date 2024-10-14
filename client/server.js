@@ -174,25 +174,23 @@ app.prepare().then(async() => {
   });
 
   const performTransaction = async (amount) => {
-    console.log(`Initiating transaction for ${amount} coins`);
+    console.log(`Initiating transaction for ${amount} coins on Aptos Testnet`);
     
     // The private key should be a hex string without the '0x' prefix
-    const privateKeyHex = '0x876d73c65dc7696c6fd4c08e897e91b0c8d0ad8dbada6a40337dc24807ca2206'; 
-    const privateKey = HexString.ensure(privateKeyHex).toUint8Array();
-    console.log("check",privateKey);
-  
-    const toAddress = '0x51e1de64d24251bbd3d9d96914e9cb8e79e08b3396c66c974d4b6087c0273916'; // The address of the smart contract (my wallet address since wallet is linked to deployed smart contract on remix ide)
-    console.log("check2",toAddress);
+    const privateKeyHex = '876d73c65dc7696c6fd4c08e897e91b0c8d0ad8dbada6a40337dc24807ca2206'; 
+    
+    const toAddress = '0x87da5a2173900dc609ff269f5209d03998796c1d2d4a4224303d846a36d9b954';   //karan wallet address
+    console.log("Recipient address:", toAddress);
 
     try {
-        const txHash = await transferLegacyCoin(privateKeyHex, toAddress, amount);     // try to reverse this   //just added Hex instead of only privateKey
-        console.log(`Transaction successful. Hash: ${txHash}`);
+        const txHash = await transferLegacyCoin(privateKeyHex, toAddress, amount);
+        console.log(`Transaction successful on Testnet. Hash: ${txHash}`);
         return txHash;
     } catch (error) {
-        console.error('Transaction failed:', error);
+        console.error('Transaction failed on Testnet:', error);
         throw error;
     }
-  }
+}
 
   server.post('/invest',(req,res)=>{
     const amount=req.body;
@@ -204,6 +202,8 @@ app.prepare().then(async() => {
           console.error(err);
           return res.status(500).send('Error inserting user');
       };
+  });
+
 
   performTransaction(investAmount);
   res.redirect('/');
